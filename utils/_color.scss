@@ -1,0 +1,40 @@
+$color-list:(
+    primary:    #0d6efd,
+    secondary:  #6c757d,
+    success:    #198754,
+    info:       #0dcaf0,
+    warning:    #ffc107,
+    danger:     #dc3545,
+    light:      #f8f9fa,
+    dark:       #212529,
+    black-19:   #191919,
+    gray-36:    #363636,
+    gray-56:    #565656,
+    gray-8e:    #8e8e8e,
+    gray-b4:    #b4b4b4,
+    gray-cc:    #bbc2cc,
+    white-ec:   #ececec,
+    white-e3:   #e3e3e3,
+    white-f6:   #f6f6f6,
+    white-fb:   #fbfbfb,
+    active-95:  #004f95,
+    blue-78:    #004078,
+    blue-cb:    #016ccb,
+    blue-42:    #429cec,
+    blue-d2:    #00bcd2,
+    green-ae:   #00d2ae,
+    green-45:   #3c6a45,
+);
+
+
+@each $key, $color in $color-list{
+    .color-#{$key}{
+        color: $color !important;
+    }
+    .bg-#{$key}{
+        background: $color !important;
+    }
+    .border-#{$key}{
+        border-color: $color !important;
+    }
+}

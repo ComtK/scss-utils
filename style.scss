@@ -1,0 +1,9 @@
+@charset "UTF-8";
+@import "./base/common";
+
+.wrapper{
+    // @include setReactiveAttr('padding', 10, 20, 'max');
+    div{
+        @include setReactiveAttr('padding', 10, 20, 'min');
+    }
+}

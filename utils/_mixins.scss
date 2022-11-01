@@ -1,0 +1,35 @@
+@mixin separator($color :map-get($color-list, 'primary') ){
+    content:"";
+    display: inline-block;
+    width: 1px;
+    height: 0.8rem;
+    background: $color;
+    margin: 0 0.5rem;
+
+}
+
+@mixin multilineEllipsis($line: 2){
+    -webkit-line-clamp: $line;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+@mixin setReactiveAttr($name, $min, $max, $type){
+    #{$name}: #{$max}px;
+    $list: if($type == 'max' ,$max-breakpoint-list, $min-breakpoint-list);
+    $length: length($list);
+    $gap: calc(($max - $min) / $length);
+    @each $key, $value in $list {
+        $i: index($list, ($key $value));
+        @media (#{$type}-width: #{$value}){
+            #{$name}: #{$max - calc($gap * $i)}px;
+        }
+    }
+}
+
+@mixin customSelect(){
+    appearance:none;
+    // background:white url("/resources/img/sub/ic_select_arrow.png") no-repeat right 1rem center;
+    padding-right: 3rem !important;
+}

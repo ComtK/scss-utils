@@ -1,0 +1,29 @@
+/*grid-breakpoints*/
+$grid-breakpoints-xs: 320px;
+$grid-breakpoints-sm: 576px;
+$grid-breakpoints-md: 768px;
+$grid-breakpoints-lg: 992px;
+$grid-breakpoints-xl: 1200px;
+$grid-breakpoints-xxl: 1400px;
+$grid-screen-width: 1920px;
+$grid-contents-width: 1440px;
+
+$max-breakpoint-list:(
+        screen: calc($grid-screen-width - 0.02px),
+        contents: calc($grid-contents-width - 0.02px),
+        xxl: calc($grid-breakpoints-xxl - 0.02px),
+        xl: calc($grid-breakpoints-xl - 0.02px),
+        lg: calc($grid-breakpoints-lg - 0.02px),
+        md: calc($grid-breakpoints-md - 0.02px),
+        sm: calc($grid-breakpoints-sm - 0.02px),
+);
+
+$min-breakpoint-list:(
+        xxl: $grid-breakpoints-xxl,
+        xl: $grid-breakpoints-xl,
+        md: $grid-breakpoints-md,
+        sm: $grid-breakpoints-sm,
+        lg: $grid-breakpoints-lg,
+        xs: $grid-breakpoints-xs,
+        zero: 0,
+);
