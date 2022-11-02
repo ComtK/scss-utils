@@ -19,11 +19,11 @@ $max-breakpoint-list:(
 );
 
 $min-breakpoint-list:(
-        xxl: $grid-breakpoints-xxl,
-        xl: $grid-breakpoints-xl,
-        md: $grid-breakpoints-md,
-        sm: $grid-breakpoints-sm,
-        lg: $grid-breakpoints-lg,
-        xs: $grid-breakpoints-xs,
         zero: 0,
+        xs: $grid-breakpoints-xs,
+        lg: $grid-breakpoints-lg,
+        sm: $grid-breakpoints-sm,
+        md: $grid-breakpoints-md,
+        xl: $grid-breakpoints-xl,
+        xxl: $grid-breakpoints-xxl,
 );

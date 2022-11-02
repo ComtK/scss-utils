@@ -40,40 +40,16 @@
 }
 
 /*max-breakpoints*/
-@each $max-size in $size-list {
-    @each $min-size in $size-list {
-        @if($max-size >= $min-size){
-            .font-size-#{$min-size}-#{$max-size}{
-                font-size: #{$max-size}px;
-                $length: length($max-breakpoint-list);
-                $gap: calc(($max-size - $min-size) / $length);
-                @each $key, $value in $max-breakpoint-list {
-                    $i: index($max-breakpoint-list, ($key $value));
-                    @media (max-width: #{$value}){
-                        $underTen: $max-size - calc($gap * $i);
-                        font-size: #{$max-size - calc($gap * $i)}px;
-                        @if($underTen < 10){
-                            zoom: calc($underTen / 10);
-                        }
-                    }
-                }
-            }
-        }
-    }
-}
-
-
-/*min-breakpoints*/
 // @each $max-size in $size-list {
 //     @each $min-size in $size-list {
 //         @if($max-size >= $min-size){
 //             .font-size-#{$min-size}-#{$max-size}{
 //                 font-size: #{$max-size}px;
-//                 $length: length($min-breakpoint-list);
+//                 $length: length($max-breakpoint-list);
 //                 $gap: calc(($max-size - $min-size) / $length);
-//                 @each $key, $value in $min-breakpoint-list {
-//                     $i: index($min-breakpoint-list, ($key $value));
-//                     @media (min-width: #{$value}){
+//                 @each $key, $value in $max-breakpoint-list {
+//                     $i: index($max-breakpoint-list, ($key $value));
+//                     @media (max-width: #{$value}){
 //                         $underTen: $max-size - calc($gap * $i);
 //                         font-size: #{$max-size - calc($gap * $i)}px;
 //                         @if($underTen < 10){
@@ -85,3 +61,27 @@
 //         }
 //     }
 // }
+
+
+/*min-breakpoints*/
+@each $max-size in $size-list {
+    @each $min-size in $size-list {
+        @if($max-size >= $min-size){
+            .font-size-#{$min-size}-#{$max-size}{
+                font-size: #{$max-size}px;
+                $length: length($min-breakpoint-list);
+                $gap: calc(($max-size - $min-size) / $length);
+                @each $key, $value in $min-breakpoint-list {
+                    $i: index($min-breakpoint-list, ($key $value));
+                    @media (min-width: #{$value}){
+                        $underTen: $max-size - calc($gap * ($length - $i));
+                        font-size: #{$max-size - calc($gap * ($length - $i))}px;
+                        @if($underTen < 10){
+                            zoom: calc($underTen / 10);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

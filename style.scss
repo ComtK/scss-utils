@@ -2,8 +2,36 @@
 @import "./base/common";
 
 .wrapper{
-    // @include setReactiveAttr('padding', 10, 20, 'max');
+    @include setReactiveAttr('padding', 10, 80, 'max');
     div{
-        @include setReactiveAttr('padding', 10, 20, 'min');
+        @include setReactiveAttr('padding', 10, 80, 'min');
+    }
+}
+.grid-divider{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    .divider-item{
+        position: relative;
+        background: white;
+        width: 200px;
+        height: 200px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        max-width: 100%;
+    }
+}
+@include verticalDivider();
+
+@media (min-width: 0px) {
+    body{
+        background: red;
+    }
+}
+
+@media (min-width: 600px) {
+    body{
+        background: yellowgreen;
     }
 }
