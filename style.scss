@@ -2,15 +2,15 @@
 @import "./base/common";
 
 .wrapper{
-    @include setReactiveAttr('padding', 10, 80, 'max');
+    @include set-reactive-attribute('padding', 10, 80, 'max');
     div{
-        @include setReactiveAttr('padding', 10, 80, 'min');
+        @include set-reactive-attribute('padding', 10, 80, 'min');
     }
 }
 .grid-divider{
     display: flex;
     justify-content: center;
-    flex-direction: column;
+    @include grid-divider();
     .divider-item{
         position: relative;
         background: white;
@@ -22,11 +22,10 @@
         max-width: 100%;
     }
 }
-@include verticalDivider();
 
 @media (min-width: 0px) {
     body{
-        background: red;
+        background: blue;
     }
 }
 
